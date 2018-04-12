@@ -39,6 +39,11 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        
+        <TextBlock x:Name="Warning1" HorizontalAlignment="Left" Margin="396,70,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="Red"/>
+        <TextBlock x:Name="Warning2" HorizontalAlignment="Left" Margin="396,102,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock x:Name="Warning3" HorizontalAlignment="Left" Margin="396,136,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock x:Name="Warning4" HorizontalAlignment="Left" Margin="396,169,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock x:Name="Warning5" HorizontalAlignment="Left" Margin="396,202,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Red"/>
+
     </Grid>
 </Page>
