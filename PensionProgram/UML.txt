@@ -1,0 +1,16 @@
+
+https://yuml.me/diagram/scruffy/class/draw
+
+
+%2F%2F Cool Class Diagram, 
+[PensionScheme]++-1>[Customer]
+[PensionScheme]++-1>[PensionsSchemeNumber]
+[PensionScheme]++-1>[DepositAccount]
+[PensionScheme]++-1>[Premium]
+[Premium]++-1>[Maturity]
+[Premium]++-*>[Payment]
+[Payment]++-1>[Taxcode]
+[DepositAccount]++-*>[SavingProduct]
+[SavingProduct]^-[LifePension],[SavingProduct]^-[RatePension] 
+[Prognose]
+[RateException]
