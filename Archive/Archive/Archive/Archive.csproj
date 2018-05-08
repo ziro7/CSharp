@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archive.cs" />
+    <Compile Include="ArchiveException.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="ArchiveInput.cs">
       <SubType>Form</SubType>
@@ -53,6 +54,10 @@
     <Compile Include="ArchiveInput.Designer.cs">
       <DependentUpon>ArchiveInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilePrint.cs" />
+    <Compile Include="GuiLogger.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IPrint.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Archive
 {
-	public class Student : Person, IComparable
+	public class Student : Person
 	{
 		public School School { get; set; }
 
@@ -19,10 +20,6 @@ namespace Archive
 		}
 
 
-		public int CompareTo(object obj)
-		{
-			throw new NotImplementedException();
-		}
 	}
 
 }
