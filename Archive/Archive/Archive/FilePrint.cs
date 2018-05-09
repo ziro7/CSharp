@@ -14,10 +14,10 @@ namespace Archive
 
 		public void Print(string message)
 		{
-			using (var streamWriter = new StreamWriter(_path, true))
-			{
-				streamWriter.WriteLine(message);
-			}
+			//using (var streamWriter = new StreamWriter(_path, true))
+			//{
+			//	streamWriter.WriteLine(message);
+			//}
 		}
 	}
 }

@@ -14,7 +14,6 @@ namespace Archive
 		[STAThread]
 		static void Main()
 		{
-			Archive archive = new Archive(new GuiLogger(), new FilePrint("C:\\log.txt")); 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new ArchiveInput());
