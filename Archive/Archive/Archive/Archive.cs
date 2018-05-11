@@ -12,17 +12,15 @@ namespace Archive
 {
 	public class Archive
 	{
-		private readonly ILogger _logger;
-		private readonly IPrint _print;
+		public ILogger Logger { get; }
 		
 		public List<Student> Students { get; } = new List<Student>();
 		public List<Employee> Employees { get; } = new List<Employee>();
 
 		//Konstruktor
-		public Archive(ILogger logger, IPrint print)
+		public Archive(ILogger logger)
 		{
-			this._logger = logger;
-			this._print = print;
+			this.Logger = logger;
 		}
 
 		//I nedenstående 2 metoder undersøges det først, om der allerede finde en registrering med samme telefon nummer. 
@@ -42,7 +40,7 @@ namespace Archive
 					student.PostNumber = postNumber;
 					student.PhoneNumber = phoneNumber;
 					student.School = school;
-					_logger.LogInfo("Studerende ændret kl. " + DateTime.Now);
+					Logger.LogInfo("Studerende ændret kl. " + DateTime.Now);
 					personFound = true;
 				}
 			}
@@ -50,7 +48,7 @@ namespace Archive
 			if (!personFound)
 			{
 				Students.Add(new Student(name, age, adresse, postNumber, phoneNumber, school));
-				_logger.LogInfo("Studerende oprettet kl. " + DateTime.Now);
+				Logger.LogInfo("Studerende oprettet kl. " + DateTime.Now);
 			}
 		}
 	
@@ -70,14 +68,14 @@ namespace Archive
 					employee.PhoneNumber = phoneNumber;
 					employee.Job = job;
 					employee.Salary = salary;
-					_logger.LogInfo("Medarbejder ændret kl. " + DateTime.Now);
+					Logger.LogInfo("Medarbejder ændret kl. " + DateTime.Now);
 					personFound = true;
 				}
 			}
 			if (!personFound)
 			{
 				Employees.Add(new Employee(name, age, adresse, postNumber, phoneNumber, job, salary));
-				_logger.LogInfo("Medarbejder oprettet kl. " + DateTime.Now);
+				Logger.LogInfo("Medarbejder oprettet kl. " + DateTime.Now);
 			}
 		}
 
@@ -92,7 +90,7 @@ namespace Archive
 			{
 				if (Students[i].PhoneNumber == phoneNumber)
 				{
-					//_logger.LogInfo("Person med telefonnummer " + Students[i].PhoneNumber + " blev slettet kl. " + DateTime.Now);
+					Logger.LogInfo("Person med telefonnummer " + Students[i].PhoneNumber + " blev slettet kl. " + DateTime.Now);
 					Students.Remove(Students[i]);
 					MessageBox.Show("Sletning succesfuld", "Sletning succesfuld", MessageBoxButtons.OK);
 					personFound = true;
@@ -106,7 +104,7 @@ namespace Archive
 				{
 					if (Employees[i].PhoneNumber == phoneNumber)
 					{
-						//_logger.LogInfo("Person med telefonnummer " + Employees[i].PhoneNumber + " blev slettet kl. " + DateTime.Now);
+						Logger.LogInfo("Person med telefonnummer " + Employees[i].PhoneNumber + " blev slettet kl. " + DateTime.Now);
 						Employees.Remove(Employees[i]);
 						MessageBox.Show("Sletning succesfuld", "Sletning succesfuld", MessageBoxButtons.OK);
 						personFound = true;
@@ -118,13 +116,14 @@ namespace Archive
 			if (personFound == false)
 			{
 				MessageBox.Show("Der findes ikke en person med det telefon nummer i listen", "Ingen person matcher", MessageBoxButtons.OK);
+				Logger.LogInfo("Person ikke fundet og kan ikk slettes");
 			}
 		}
 
 		//Viser antalet af mennesker
 		public int ShowNumberOfPersons()
 		{
-			_logger.LogInfo("Viser antallet af personer kl. " + DateTime.Now);
+			Logger.LogInfo("Viser antallet af personer kl. " + DateTime.Now);
 			return Employees.Count + Students.Count;
 		}
 
@@ -132,7 +131,7 @@ namespace Archive
 		//Viser antale af studerende eller employees
 		public int ShowNumberOfPersons(Boolean showStudents)
 		{
-			_logger.LogInfo("Viser antallet af specifikke personer kl. " + DateTime.Now);
+			Logger.LogInfo("Viser antallet af specifikke personer kl. " + DateTime.Now);
 			return (showStudents) ? Students.Count : Employees.Count;
 		}
 
@@ -186,16 +185,13 @@ namespace Archive
 			}
 
 			//4. returner den relevante liste.
-			_logger.LogInfo("Retuner person(er) med højeste eller laveste aldre kl. " + DateTime.Now);
-			_print.Print(minAgeList.ToString());
+			Logger.LogInfo("Retuner person(er) med højeste eller laveste aldre kl. " + DateTime.Now);
 			if (lowestAge)
 			{
-				_print.Print(minAgeList.ToString());
 				return minAgeList;
 			}
 			else
 			{
-				_print.Print(maxAgeList.ToString());
 				return maxAgeList;
 			}
 		}
@@ -206,11 +202,10 @@ namespace Archive
 			List<Employee> minSalaryList = new List<Employee>();
 			List<Employee> maxSalaryList = new List<Employee>();
 
-
-			Employees.Sort(); //efter salary
+			Employees.Sort(new SortSalaryAscendingHelper()); //efter salary stigende
 
 			//da listen er sorteret efter løn må min og max være de to yderse værdier.
-			//hvis listen er sorteret stigende/falden kunne man bare min = [0], max = count -1
+			//hvis listen er sorteret stigende kunne man bare min = [0], max = count -1
 			Double? minSalary = Employees[0].Salary;
 			Double? maxSalary = Employees[Employees.Count - 1].Salary;
 
@@ -231,7 +226,7 @@ namespace Archive
 			}
 
 			//returnere den liste der bliver bedt om.
-			_logger.LogInfo("Retuner person(er) med højeste eller laveste løn kl. " + DateTime.Now);
+			Logger.LogInfo("Retuner person(er) med højeste eller laveste løn kl. " + DateTime.Now);
 			return (lowestSalary) ? minSalaryList : maxSalaryList;
 
 		}

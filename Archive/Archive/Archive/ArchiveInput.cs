@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +31,10 @@ namespace Archive
 
 		public ArchiveInput()
 		{
+			//får istansieret mit arkiv og får tilført start data
 			InitializeComponent();
 			SchoolComboBox.DataSource = Enum.GetValues(typeof(School));
-			archive = new Archive(new GuiLogger(), new FilePrint("C:\\log.txt"));
+			archive = new Archive(new FilePrint(@"C:\\Zirodevelopment\Csharp\log.txt"));
 			archive.CreateOrAlterStudent("Jacob", 23, "Hyttekrogen 9", 2665, 24862386, School.SmartLearning);
 			archive.CreateOrAlterStudent("Jacob2", 23, "Hyttekrogen 9", 2665, 24862387, School.SmartLearning);
 			archive.CreateOrAlterStudent("Jacob3", 35, "Hyttekrogen 9", 2665, 24862388, School.SmartLearning);
@@ -45,6 +47,7 @@ namespace Archive
 			dataGridView.DataSource = archive.ShowAllPersons();
 		}
 
+		//Tryk på knappen opret - Kunne være mere try catch here - men igen er ikke fokus for nu.
 		private void CreateOrAlterButton_Click(object sender, EventArgs e)
 		{
 			isStudent = StudentsRadioButton.Checked;
@@ -54,6 +57,7 @@ namespace Archive
 			postNumber = Convert.ToInt32(PostNumberTextBox.Text);
 			phoneNumber = Convert.ToInt32(PhoneNumberTextBox.Text);
 
+			//hvis student radio button er selected tager jeg værdi fra dropdown.
 			if (isStudent)
 			{
 				school = (School) SchoolComboBox.SelectedItem;
@@ -61,6 +65,7 @@ namespace Archive
 			}
 			else
 			{
+				//hvis employee radio button gemmer jeg employee værdier.
 				job = Convert.ToString(JobTextBox.Text);
 
 				if (SalaryTextBox.Text == "")
@@ -75,7 +80,8 @@ namespace Archive
 					}
 					catch (Exception exception)
 					{
-						MessageBox.Show(exception.StackTrace, "Fejl i input vedr. sletningsfelt", MessageBoxButtons.OK);
+						archive.Logger.Error("Fejl i input vedr. sletningsfelt", exception);
+
 					}
 				}
 				archive.CreateOrAlterEmployee(name, age, adress,postNumber,phoneNumber,job, salary);
@@ -83,6 +89,7 @@ namespace Archive
 
 		}
 
+		//På slet har jeg lidt try catch og sender evt. fejl til det der tager sig af ILogger interfacet.
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -92,11 +99,11 @@ namespace Archive
 			}
 			catch (Exception exception)
 			{
-				MessageBox.Show("Fejl i input vedr. sletningsfelt", "Fejl i input vedr. sletningsfelt", MessageBoxButtons.OK); 
-				throw;
+				archive.Logger.Error("Fejl i sletning af person", exception);
 			}
 		}
 
+		//Clicker på antallet i de næste tre
 		private void ShowNumberOfPersonButton_Click(object sender, EventArgs e)
 		{
 			ShowNumbersOfLabel.Text = "Antal af personer er: " + archive.ShowNumberOfPersons();
@@ -112,6 +119,7 @@ namespace Archive
 			ShowNumbersOfLabel.Text = "Antal af medarbejdere er: " + archive.ShowNumberOfPersons(false);
 		}
 
+		//finder person ud fra nummer med try catch
 		private void PersonWithPhoneNumberButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -121,13 +129,14 @@ namespace Archive
 			}
 			catch (Exception exception)
 			{
-				MessageBox.Show(exception.StackTrace, "Fejl", MessageBoxButtons.OK);
+				archive.Logger.Error("Fejl - noget gik galt da kunden skulle findes", exception);
 			}
 		}
 
+		//de næste 5 kalder "bare" medtoder til vise data og viser resultatet i grid.
 		private void MinAgeButton_Click(object sender, EventArgs e)
 		{
-			dataGridView.DataSource = archive.ShowPersonsWithAge();
+			dataGridView.DataSource = archive.ShowPersonsWithAge();//optional parameter med true som udgangspunkt
 		}
 
 		private void MaxAgeButton_Click(object sender, EventArgs e)
@@ -145,6 +154,12 @@ namespace Archive
 			dataGridView.DataSource = archive.ShowEmployeesWithSalary(false);
 		}
 
+		private void ShowAllPersonsButton_Click(object sender, EventArgs e)
+		{
+			dataGridView.DataSource = archive.ShowAllPersons();
+		}
+
+		//Lidt gui opsætning så korrekte felter er enabled når der ændres gruppe
 		private void EmployeeRadioButton_CheckedChanged(object sender, EventArgs e)
 		{
 			if (EmployeeRadioButton.Checked)
@@ -166,11 +181,7 @@ namespace Archive
 			SchoolComboBox.Enabled = StudentsRadioButton.Checked;
 		}
 
-		private void ShowAllPersonsButton_Click(object sender, EventArgs e)
-		{
-			dataGridView.DataSource = archive.ShowAllPersons();
-		}
-
+		//laver sort på salary med togling den ene eller anden vej.
 		private void SortSalary_Click(object sender, EventArgs e)
 		{
 			var list = archive.Employees;
@@ -186,6 +197,7 @@ namespace Archive
 			dataGridView.DataSource = list;
 		}
 
+		//sort på age - ser anderledes ud, da SortAgeDescending er default via IComparable
 		private void SortAge_Click(object sender, EventArgs e)
 		{
 			var list = archive.ShowAllPersons();

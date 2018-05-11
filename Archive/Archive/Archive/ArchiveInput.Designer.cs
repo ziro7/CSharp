@@ -52,6 +52,8 @@
 			this.NameTextBox = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.SortSalary = new System.Windows.Forms.Button();
+			this.SortAge = new System.Windows.Forms.Button();
 			this.ShowAllPersonsButton = new System.Windows.Forms.Button();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -73,9 +75,7 @@
 			this.DeleteButton = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.LogLabel = new System.Windows.Forms.Label();
-			this.SortAge = new System.Windows.Forms.Button();
-			this.SortSalary = new System.Windows.Forms.Button();
+			this.label14 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -119,7 +119,7 @@
 			this.SchoolComboBox.FormattingEnabled = true;
 			this.SchoolComboBox.Location = new System.Drawing.Point(174, 190);
 			this.SchoolComboBox.Name = "SchoolComboBox";
-			this.SchoolComboBox.Size = new System.Drawing.Size(181, 24);
+			this.SchoolComboBox.Size = new System.Drawing.Size(181, 20);
 			this.SchoolComboBox.TabIndex = 22;
 			// 
 			// CreateOrAlterButton
@@ -149,7 +149,7 @@
 			this.SalaryTextBox.Location = new System.Drawing.Point(173, 248);
 			this.SalaryTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.SalaryTextBox.Name = "SalaryTextBox";
-			this.SalaryTextBox.Size = new System.Drawing.Size(182, 23);
+			this.SalaryTextBox.Size = new System.Drawing.Size(182, 20);
 			this.SalaryTextBox.TabIndex = 19;
 			// 
 			// label8
@@ -169,7 +169,7 @@
 			this.JobTextBox.Location = new System.Drawing.Point(173, 219);
 			this.JobTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.JobTextBox.Name = "JobTextBox";
-			this.JobTextBox.Size = new System.Drawing.Size(182, 23);
+			this.JobTextBox.Size = new System.Drawing.Size(182, 20);
 			this.JobTextBox.TabIndex = 17;
 			// 
 			// label7
@@ -199,7 +199,7 @@
 			this.PhoneNumberTextBox.Location = new System.Drawing.Point(173, 161);
 			this.PhoneNumberTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-			this.PhoneNumberTextBox.Size = new System.Drawing.Size(182, 23);
+			this.PhoneNumberTextBox.Size = new System.Drawing.Size(182, 20);
 			this.PhoneNumberTextBox.TabIndex = 13;
 			// 
 			// label5
@@ -218,7 +218,7 @@
 			this.PostNumberTextBox.Location = new System.Drawing.Point(173, 133);
 			this.PostNumberTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.PostNumberTextBox.Name = "PostNumberTextBox";
-			this.PostNumberTextBox.Size = new System.Drawing.Size(182, 23);
+			this.PostNumberTextBox.Size = new System.Drawing.Size(182, 20);
 			this.PostNumberTextBox.TabIndex = 11;
 			// 
 			// label4
@@ -237,7 +237,7 @@
 			this.AdressTextBox.Location = new System.Drawing.Point(173, 105);
 			this.AdressTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.AdressTextBox.Name = "AdressTextBox";
-			this.AdressTextBox.Size = new System.Drawing.Size(182, 23);
+			this.AdressTextBox.Size = new System.Drawing.Size(182, 20);
 			this.AdressTextBox.TabIndex = 9;
 			// 
 			// label1
@@ -256,7 +256,7 @@
 			this.AgeTextBox.Location = new System.Drawing.Point(173, 78);
 			this.AgeTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.AgeTextBox.Name = "AgeTextBox";
-			this.AgeTextBox.Size = new System.Drawing.Size(182, 23);
+			this.AgeTextBox.Size = new System.Drawing.Size(182, 20);
 			this.AgeTextBox.TabIndex = 7;
 			// 
 			// label3
@@ -275,7 +275,7 @@
 			this.EmployeeRadioButton.AutoSize = true;
 			this.EmployeeRadioButton.Location = new System.Drawing.Point(260, 24);
 			this.EmployeeRadioButton.Name = "EmployeeRadioButton";
-			this.EmployeeRadioButton.Size = new System.Drawing.Size(95, 20);
+			this.EmployeeRadioButton.Size = new System.Drawing.Size(77, 16);
 			this.EmployeeRadioButton.TabIndex = 5;
 			this.EmployeeRadioButton.Text = "Employee";
 			this.EmployeeRadioButton.UseVisualStyleBackColor = true;
@@ -287,7 +287,7 @@
 			this.StudentsRadioButton.Checked = true;
 			this.StudentsRadioButton.Location = new System.Drawing.Point(173, 24);
 			this.StudentsRadioButton.Name = "StudentsRadioButton";
-			this.StudentsRadioButton.Size = new System.Drawing.Size(89, 20);
+			this.StudentsRadioButton.Size = new System.Drawing.Size(72, 16);
 			this.StudentsRadioButton.TabIndex = 4;
 			this.StudentsRadioButton.TabStop = true;
 			this.StudentsRadioButton.Text = "Students";
@@ -310,7 +310,7 @@
 			this.NameTextBox.Location = new System.Drawing.Point(173, 50);
 			this.NameTextBox.MinimumSize = new System.Drawing.Size(150, 18);
 			this.NameTextBox.Name = "NameTextBox";
-			this.NameTextBox.Size = new System.Drawing.Size(182, 23);
+			this.NameTextBox.Size = new System.Drawing.Size(182, 20);
 			this.NameTextBox.TabIndex = 1;
 			// 
 			// groupBox2
@@ -345,6 +345,26 @@
 			this.groupBox5.TabIndex = 26;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Vis personer der matcher kriterie";
+			// 
+			// SortSalary
+			// 
+			this.SortSalary.Location = new System.Drawing.Point(190, 376);
+			this.SortSalary.Name = "SortSalary";
+			this.SortSalary.Size = new System.Drawing.Size(150, 23);
+			this.SortSalary.TabIndex = 34;
+			this.SortSalary.Text = "Sort on Salary";
+			this.SortSalary.UseVisualStyleBackColor = true;
+			this.SortSalary.Click += new System.EventHandler(this.SortSalary_Click);
+			// 
+			// SortAge
+			// 
+			this.SortAge.Location = new System.Drawing.Point(25, 376);
+			this.SortAge.Name = "SortAge";
+			this.SortAge.Size = new System.Drawing.Size(150, 23);
+			this.SortAge.TabIndex = 33;
+			this.SortAge.Text = "Sort on Age";
+			this.SortAge.UseVisualStyleBackColor = true;
+			this.SortAge.Click += new System.EventHandler(this.SortAge_Click);
 			// 
 			// ShowAllPersonsButton
 			// 
@@ -442,7 +462,7 @@
 			// 
 			this.PersonWithPhoneNumberTextBoks.Location = new System.Drawing.Point(25, 55);
 			this.PersonWithPhoneNumberTextBoks.Name = "PersonWithPhoneNumberTextBoks";
-			this.PersonWithPhoneNumberTextBoks.Size = new System.Drawing.Size(150, 23);
+			this.PersonWithPhoneNumberTextBoks.Size = new System.Drawing.Size(150, 20);
 			this.PersonWithPhoneNumberTextBoks.TabIndex = 25;
 			// 
 			// PersonWithPhoneNumberButton
@@ -515,7 +535,7 @@
 			this.DeletePersonTextBoks.Location = new System.Drawing.Point(173, 27);
 			this.DeletePersonTextBoks.MinimumSize = new System.Drawing.Size(150, 18);
 			this.DeletePersonTextBoks.Name = "DeletePersonTextBoks";
-			this.DeletePersonTextBoks.Size = new System.Drawing.Size(182, 23);
+			this.DeletePersonTextBoks.Size = new System.Drawing.Size(182, 20);
 			this.DeletePersonTextBoks.TabIndex = 22;
 			// 
 			// label10
@@ -553,7 +573,7 @@
 			// 
 			// groupBox6
 			// 
-			this.groupBox6.Controls.Add(this.LogLabel);
+			this.groupBox6.Controls.Add(this.label14);
 			this.groupBox6.Location = new System.Drawing.Point(27, 474);
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.Size = new System.Drawing.Size(382, 107);
@@ -561,38 +581,18 @@
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Log";
 			// 
-			// LogLabel
+			// label14
 			// 
-			this.LogLabel.AutoSize = true;
-			this.LogLabel.Location = new System.Drawing.Point(20, 24);
-			this.LogLabel.MinimumSize = new System.Drawing.Size(330, 60);
-			this.LogLabel.Name = "LogLabel";
-			this.LogLabel.Size = new System.Drawing.Size(330, 60);
-			this.LogLabel.TabIndex = 0;
-			// 
-			// SortAge
-			// 
-			this.SortAge.Location = new System.Drawing.Point(25, 376);
-			this.SortAge.Name = "SortAge";
-			this.SortAge.Size = new System.Drawing.Size(150, 23);
-			this.SortAge.TabIndex = 33;
-			this.SortAge.Text = "Sort on Age";
-			this.SortAge.UseVisualStyleBackColor = true;
-			this.SortAge.Click += new System.EventHandler(this.SortAge_Click);
-			// 
-			// SortSalary
-			// 
-			this.SortSalary.Location = new System.Drawing.Point(190, 376);
-			this.SortSalary.Name = "SortSalary";
-			this.SortSalary.Size = new System.Drawing.Size(150, 23);
-			this.SortSalary.TabIndex = 34;
-			this.SortSalary.Text = "Sort on Salary";
-			this.SortSalary.UseVisualStyleBackColor = true;
-			this.SortSalary.Click += new System.EventHandler(this.SortSalary_Click);
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(19, 35);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(176, 12);
+			this.label14.TabIndex = 0;
+			this.label14.Text = "Log er lokaliseret på: C:\\\\log.txt";
 			// 
 			// ArchiveInput
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(1073, 593);
@@ -666,9 +666,9 @@
 		private System.Windows.Forms.Button ShowAllPersonsButton;
 		private System.Windows.Forms.ComboBox SchoolComboBox;
 		private System.Windows.Forms.Label ShowNumbersOfLabel;
-		private System.Windows.Forms.Label LogLabel;
 		private System.Windows.Forms.Button SortSalary;
 		private System.Windows.Forms.Button SortAge;
+		private System.Windows.Forms.Label label14;
 	}
 }
 

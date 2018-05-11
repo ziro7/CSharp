@@ -8,6 +8,7 @@ namespace Archive
 	{
 		public int Compare(Employee left, Employee right)
 		{
+			//da salary er nullable, skal man lige angive dette først.
 			if (left.Salary == null) return 1;
 			if (right.Salary == null) return -1;
 
@@ -36,3 +37,4 @@ namespace Archive
 		}
 	}
 }
+

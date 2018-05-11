@@ -30,11 +30,5 @@ namespace Archive
 			var a = (Person)obj;
 			return this.Age.CompareTo(a.Age);
 		}
-
-
-
-
 	}
-
-
 }
