@@ -1,0 +1,7 @@
+﻿namespace SASBooking
+{
+	class customer
+	{
+
+	}
+}

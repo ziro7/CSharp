@@ -1,64 +1,23 @@
-Info: Studerende oprettet kl. 11-05-2018 21:14:39
-Info: Studerende ændret kl. 11-05-2018 21:14:39
-Info: Studerende oprettet kl. 11-05-2018 21:18:52
-Info: Studerende ændret kl. 11-05-2018 21:18:52
-Info: Studerende oprettet kl. 11-05-2018 21:20:33
-Info: Studerende ændret kl. 11-05-2018 21:20:33
-Info: Studerende oprettet kl. 11-05-2018 21:20:33
-Info: Studerende oprettet kl. 11-05-2018 21:23:50
-Info: Studerende ændret kl. 11-05-2018 21:23:50
-Info: Studerende oprettet kl. 11-05-2018 21:23:50
-Info: Medarbejder oprettet kl. 11-05-2018 21:23:50
-Info: Medarbejder ændret kl. 11-05-2018 21:23:50
-Info: Medarbejder oprettet kl. 11-05-2018 21:23:50
-Info: Studerende oprettet kl. 11-05-2018 21:30:41
-Info: Studerende ændret kl. 11-05-2018 21:30:41
-Info: Studerende oprettet kl. 11-05-2018 21:30:41
-Info: Medarbejder oprettet kl. 11-05-2018 21:30:41
-Info: Medarbejder ændret kl. 11-05-2018 21:30:41
-Info: Medarbejder oprettet kl. 11-05-2018 21:30:41
-Info: Studerende oprettet kl. 11-05-2018 21:30:41
+Info: Studerende oprettet kl. 02-06-2018 22:02:44
+Info: Studerende ændret kl. 02-06-2018 22:02:44
+Info: Studerende oprettet kl. 02-06-2018 22:02:44
+Info: Medarbejder oprettet kl. 02-06-2018 22:02:44
+Info: Medarbejder ændret kl. 02-06-2018 22:02:44
+Info: Medarbejder oprettet kl. 02-06-2018 22:02:44
+Info: Studerende oprettet kl. 02-06-2018 22:02:44
+Info: Person med telefonnummer 99999999 blev slettet kl. 02-06-2018 22:02:44
+Info: Medarbejder oprettet kl. 02-06-2018 22:03:39
+Info: Person med telefonnummer 99999999 blev slettet kl. 02-06-2018 22:03:39
+Info: Studerende oprettet kl. 02-06-2018 22:03:40
+Info: Viser antallet af personer kl. 02-06-2018 22:03:40
 Info: Person ikke fundet og kan ikk slettes
-Info: Medarbejder oprettet kl. 11-05-2018 21:30:45
-Info: Person ikke fundet og kan ikk slettes
-Info: Studerende oprettet kl. 11-05-2018 21:30:47
-Info: Viser antallet af personer kl. 11-05-2018 21:30:47
-Info: Person ikke fundet og kan ikk slettes
-Info: Viser antallet af personer kl. 11-05-2018 21:30:48
-Info: Studerende oprettet kl. 11-05-2018 21:31:17
-Info: Studerende ændret kl. 11-05-2018 21:31:17
-Info: Studerende oprettet kl. 11-05-2018 21:31:17
-Info: Medarbejder oprettet kl. 11-05-2018 21:31:17
-Info: Medarbejder ændret kl. 11-05-2018 21:31:17
-Info: Medarbejder oprettet kl. 11-05-2018 21:31:17
-Info: Studerende oprettet kl. 11-05-2018 21:31:17
-Info: Person med telefonnummer 99999999 blev slettet kl. 11-05-2018 21:31:17
-Info: Medarbejder oprettet kl. 11-05-2018 21:31:19
-Info: Person med telefonnummer 99999999 blev slettet kl. 11-05-2018 21:31:19
-Info: Studerende oprettet kl. 11-05-2018 21:31:20
-Info: Viser antallet af personer kl. 11-05-2018 21:31:20
-Info: Person ikke fundet og kan ikk slettes
-Info: Viser antallet af personer kl. 11-05-2018 21:31:23
-Info: Studerende oprettet kl. 11-05-2018 21:40:53
-Info: Studerende ændret kl. 11-05-2018 21:40:53
-Info: Studerende oprettet kl. 11-05-2018 21:40:53
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:53
-Info: Medarbejder ændret kl. 11-05-2018 21:40:53
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:53
-Info: Studerende oprettet kl. 11-05-2018 21:40:53
-Info: Person med telefonnummer 99999999 blev slettet kl. 11-05-2018 21:40:53
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:56
-Info: Person med telefonnummer 99999999 blev slettet kl. 11-05-2018 21:40:56
-Info: Studerende oprettet kl. 11-05-2018 21:40:56
-Info: Viser antallet af personer kl. 11-05-2018 21:40:56
-Info: Person ikke fundet og kan ikk slettes
-Info: Viser antallet af personer kl. 11-05-2018 21:40:58
-Info: Studerende oprettet kl. 11-05-2018 21:40:58
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:58
-Info: Viser antallet af personer kl. 11-05-2018 21:40:58
-Info: Studerende oprettet kl. 11-05-2018 21:40:58
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:58
-Info: Viser antallet af specifikke personer kl. 11-05-2018 21:40:58
-Info: Studerende oprettet kl. 11-05-2018 21:40:58
-Info: Medarbejder oprettet kl. 11-05-2018 21:40:58
-Info: Viser antallet af specifikke personer kl. 11-05-2018 21:40:58
+Info: Viser antallet af personer kl. 02-06-2018 22:03:42
+Info: Studerende oprettet kl. 02-06-2018 22:03:42
+Info: Medarbejder oprettet kl. 02-06-2018 22:03:42
+Info: Viser antallet af personer kl. 02-06-2018 22:03:42
+Info: Studerende oprettet kl. 02-06-2018 22:03:42
+Info: Medarbejder oprettet kl. 02-06-2018 22:03:42
+Info: Viser antallet af specifikke personer kl. 02-06-2018 22:03:42
+Info: Studerende oprettet kl. 02-06-2018 22:03:42
+Info: Medarbejder oprettet kl. 02-06-2018 22:03:42
+Info: Viser antallet af specifikke personer kl. 02-06-2018 22:03:42
