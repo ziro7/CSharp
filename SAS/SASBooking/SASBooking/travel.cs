@@ -3,7 +3,7 @@ using System.Text;
 
 namespace SASBooking
 {
-	class Travel
+	public class Travel
 	{
 		private List<Flight> flights = new List<Flight>();
 		private decimal price;
@@ -42,12 +42,12 @@ namespace SASBooking
 			}
 		}
 
-		public void BuyingAReservedTravel(int numberOfSeats, Customer customer)
+		public async void BuyingAReservedTravel(int numberOfSeats, Customer customer)
 		{
 			foreach (var flight in flights)
 			{
 				flight.ToString();
-				flight.BuyingReservedTickets(numberOfSeats, customer);
+				await flight.BuyingReservedTicketsAsync(numberOfSeats, customer);
 			}
 		}
 

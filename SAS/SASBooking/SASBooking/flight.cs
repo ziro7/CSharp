@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SASBooking
 {
-	class Flight
+	public class Flight
 	{
 		// Assumes that a Flight has 12 seats and it can't change (could create a flighttype subclass etc - but this will do)
 		private List<string> _availableSeats = new List<string>(){"1a", "1b", "1c", "2a", "2b", "2c", "3a", "3b", "3c","4a", "4b", "4c" };
@@ -23,11 +23,14 @@ namespace SASBooking
 		private readonly DateTime _date;
 		private Destination _travelFrom;
 		private Destination _destination;
-		private int reserveTime = 50000;
+		private int reserveTime = 500000; 
 
 		// Creating a lock to make sure only one thread can acces the elements inside the {} of the lock
 		private static object seatLock = new object();
-		
+
+		public ConcurrentDictionary<string, Customer> ReservedSeats { get => _reservedSeats;}
+		public ConcurrentDictionary<string, Customer> BoughtTickets { get => _boughtTickets;}
+
 		public Flight(Destination flightFrom, Destination toDestination, DateTime date)
 		{
 			this._travelFrom = flightFrom;
@@ -116,8 +119,10 @@ namespace SASBooking
 		// This one is made with async keyword as this is threadsafe and there is no need
 		// to block or similar (and to test it) 
 		// In order to create some thing that takes a while i set printing tickets takes 5 sec.
-		public async void BuyingReservedTickets(int numberOfSeats, Customer customer)
+		public async Task BuyingReservedTicketsAsync(int numberOfSeats, Customer customer)
 		{
+			StringBuilder boughtReservedSeatStringBuilder = new StringBuilder("The following seats was bought: ");
+
 			// Creates a counter to make sure it is known how many seat was bought
 			int count = 0;
 			// Create stream to write to file
@@ -128,7 +133,7 @@ namespace SASBooking
 				// if the count is equal to the number of required seats i stop looking for more
 				if (count == numberOfSeats)
 				{
-					return;
+					break;
 				}
 
 				// If the value in the dictionay equals the customer who reserved the item
@@ -139,7 +144,7 @@ namespace SASBooking
 					if (_reservedSeats.TryRemove(seat.Key, out customer))
 					{
 						_boughtTickets.TryAdd(seat.Key, customer);
-						count++;
+						boughtReservedSeatStringBuilder.Append(seat.Key + " ");
 						try
 						{
 							await PrintingTicketAsync(seat);
@@ -148,11 +153,12 @@ namespace SASBooking
 						{
 							Console.WriteLine("Exception Message: " + ex.Message);
 						}
+						count++;
 					}
 				}
 			}
 
-			Console.WriteLine("A total of " + count + " tickets was bought.");
+			Console.WriteLine(boughtReservedSeatStringBuilder);
 		}
 
 		private static async Task PrintingTicketAsync(KeyValuePair<string, Customer> seat)
@@ -171,7 +177,7 @@ namespace SASBooking
 						return;
 					}
 				}
-				catch (IOException e) when (i <= numberOfRetries)
+				catch (IOException) when (i <= numberOfRetries)
 				{
 					Thread.Sleep(DelayOnRetry);
 				}

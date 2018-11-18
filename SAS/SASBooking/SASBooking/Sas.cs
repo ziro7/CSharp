@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SASBooking
 {
-	class Sas
+	public class Sas
 	{
 		private List<Travel> _travels = new List<Travel>();
 		private List<Customer> _customers = new List<Customer>();

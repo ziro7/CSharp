@@ -1,6 +1,6 @@
 ﻿namespace SASBooking
 {
-	enum Destination
+	public enum Destination
 	{
 		Copenhagen,
 		Oslo,

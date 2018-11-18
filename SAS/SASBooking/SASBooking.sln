@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SASBooking", "SASBooking\SASBooking.csproj", "{86F09937-0C24-4C19-BC3A-C005E4A334EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SASBooking", "SASBooking\SASBooking.csproj", "{86F09937-0C24-4C19-BC3A-C005E4A334EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SASBookingUnitTests", "SASBookingUnitTests\SASBookingUnitTests.csproj", "{141092E1-2A02-40B3-BAEE-4E162D5E6E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{86F09937-0C24-4C19-BC3A-C005E4A334EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F09937-0C24-4C19-BC3A-C005E4A334EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F09937-0C24-4C19-BC3A-C005E4A334EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141092E1-2A02-40B3-BAEE-4E162D5E6E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141092E1-2A02-40B3-BAEE-4E162D5E6E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141092E1-2A02-40B3-BAEE-4E162D5E6E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141092E1-2A02-40B3-BAEE-4E162D5E6E8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

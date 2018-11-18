@@ -5,9 +5,9 @@ using System.Xml.Serialization;
 
 namespace SASBooking
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			// Sas Main class
 			Sas sas = new Sas();
@@ -106,7 +106,8 @@ namespace SASBooking
 			Customer familienHansen = sas.Customers.Find(x => x.Name == "familienHansen");
 			sas.ReserveATicket(copenhagenOsloRoundTrip,9,familienHansen);
 
-			sas.BuyAReservedTicket(copenhagenOsloRoundTrip,9,familienHansen);
+			// familienHansen buy reserved seats
+			sas.BuyAReservedTicket(copenhagenOsloRoundTrip,12,familienHansen);
 			Console.ReadLine();
 		}
 	}
