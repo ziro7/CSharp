@@ -125,7 +125,6 @@ namespace SASBooking
 
 			// Creates a counter to make sure it is known how many seat was bought
 			int count = 0;
-			// Create stream to write to file
 
 			// Iterate over the reserved seats dictionary 
 			foreach (KeyValuePair<string, Customer> seat in _reservedSeats)
